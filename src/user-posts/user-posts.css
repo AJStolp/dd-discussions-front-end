@@ -1,0 +1,28 @@
+.user-photo {
+	clip-path: circle(40%);
+	height: 100%;
+	width: 3em;
+	position: relative;
+	right: 7px;
+}
+.user-posts {
+	margin: 0 80px;
+}
+.user-posts-answers {
+	margin: 0 0 30px 80px;
+}
+.discussions-heading {
+	text-align: center;
+}
+hr {
+	margin: 0 80px 20px 80px;
+}
+section > p {
+	line-height: 2.5em;
+}
+img {
+	z-index: -1;
+}
+.fire-likes {
+	color: #ff0000;
+}

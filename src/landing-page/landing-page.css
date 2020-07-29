@@ -1,0 +1,19 @@
+.form-landing-page {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+	padding: 10px 10px 15px 10px;
+	border: 3px solid black;
+}
+.landing-page-submit-button {
+	margin-top: 12px;
+}
+.landing-page-form-child {
+	padding: 8px 0;
+	align-self: flex-start;
+}
+.double-dose-discussions-heading {
+	margin-bottom: 100px;
+	text-align: center;
+}

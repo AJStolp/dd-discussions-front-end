@@ -1,0 +1,18 @@
+.sign-in-form {
+   display: flex;
+   flex-direction: column;
+   width: 85%;
+   margin: auto;
+   border: 3px solid black;
+   padding: 20px 20px;
+}
+.sign-in-form-labels {
+   align-self: flex-start;
+   padding: 12px 0;
+}
+.display-center {
+   margin-top: 100px;
+}
+.sign-in-heading {
+   text-align: center;
+}

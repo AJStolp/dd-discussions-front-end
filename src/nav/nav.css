@@ -1,0 +1,17 @@
+.div-nav {
+   border-bottom: 4px solid gray;
+   padding: 20px 0;
+   margin-bottom: 20px;
+   text-align: center;
+   background-color: lightgray;
+   position: sticky;
+   top: 0;
+}
+.div-nav-child {
+   padding: 0 10px 0 10px;
+   text-decoration: none;
+   color: black;
+}
+.div-nav-child:hover {
+   text-decoration: underline;
+}
