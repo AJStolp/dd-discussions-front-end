@@ -3,15 +3,23 @@
    padding: 20px 0;
    margin-bottom: 20px;
    text-align: center;
-   background-color: lightgray;
+   background-color: var(--main-grey-color);
    position: sticky;
    top: 0;
 }
 .div-nav-child {
    padding: 0 10px 0 10px;
    text-decoration: none;
-   color: black;
+   color: var(--main-purple-color);
+   font-weight: 700;
+   font-size: 1.3em;
 }
 .div-nav-child:hover {
    text-decoration: underline;
+}
+.fa-sign-in-out-alt {
+   color: white;
+   padding-right: 8px;
+   position: relative;
+   top: 2px;
 }

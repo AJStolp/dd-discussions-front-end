@@ -7,9 +7,10 @@
    right: 0;
    width: 100%;
    text-align: center;
-   background-color: lightgray;
+   background-color: var(--main-grey-color);
 }
 
 .footer {
    font-weight: 800;
+   color: var(--main-purple-color)
 }

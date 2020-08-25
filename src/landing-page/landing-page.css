@@ -13,6 +13,10 @@
 	padding: 8px 0;
 	align-self: flex-start;
 }
+.landing-page-input-child:focus-within {
+	height: 6rem;
+	font-size: 1.1rem;
+}
 .double-dose-discussions-heading {
 	margin-bottom: 100px;
 	text-align: center;

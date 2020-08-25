@@ -4,7 +4,8 @@ import LandingPage from "./landing-page/landing-page";
 import SignIn from "./sign-in/sing-in";
 import Footer from "./footer/footer";
 import Nav from "./nav/nav";
-import Discussions from './user-posts/user-posts';
+import Discussions from "./user-posts/user-posts";
+import WelcomeMessage from "./components/welcome-message/welcome-message";
 
 class App extends React.Component {
 	render() {
@@ -12,9 +13,10 @@ class App extends React.Component {
 			<div className='App'>
 				<Nav />
 				<Switch>
-					<Route exact path='/' component={LandingPage} />
 					<Route exact path='/sign-in' component={SignIn} />
-          <Route exact path='/user-posts' component={Discussions} />
+					<Route exact path='/' component={LandingPage} />
+					<Route exact path='/user-posts' component={Discussions} />
+					<Route exact path='/welcome-message' component={WelcomeMessage} />
 				</Switch>
 				<Footer />
 			</div>
