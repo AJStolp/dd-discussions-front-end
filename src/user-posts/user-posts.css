@@ -1,12 +1,31 @@
+.post-flex-test {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
 .user-photo {
 	clip-path: circle(40%);
 	height: 100%;
 	width: 3em;
-	position: relative;
+	/* position: relative; */
 	right: 7px;
 }
 .user-posts {
-	margin: 0 80px;
+	margin: 0 12px;
+	box-shadow: 0px 0px 16px 3px rgba(134, 133, 133, 0.75);
+	background-color: whitesmoke;
+	border: 2px solid var(--secondary-green-color);
+}
+.user-posts-body {
+	margin-left: 10px;
+	font-size: 16px;
+	color: var(--main-purple-color);
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: 600;
+}
+.user-posts-heading {
+	margin-left: 10px;
+	color: var(--secondary-green-color);
 }
 .user-posts-answers {
 	margin: 0 0 30px 80px;

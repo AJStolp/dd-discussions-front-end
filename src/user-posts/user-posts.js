@@ -8,45 +8,50 @@ import DiscussionData from "./user-posts-data/user-posts-data";
 class Discussions extends React.Component {
 	constructor(props) {
 		super(props);
-		this.setState = {
+		this.state = {
 			discussions: [],
 		};
 	}
+
 	setDiscussions = (discussions) => {
 		this.setState({
-			discussions
-		})
-	}
+			discussions,
+		});
+	};
 	componentDidMount() {
 		const APIEndpoint = config.API_ENDPOINT;
-		const postEndpoint = '/posts';
+		const postEndpoint = "/api/posts";
 		const url = APIEndpoint + postEndpoint;
 
 		const request = {
 			method: "GET",
 			headers: {
-				'content type': 'application-json'
-			}
+				"content-type": "application-json",
+			},
+			// body: JSON.stringify()
 		};
 		fetch(url, request)
-			.then(res => {
-				console.log(res, "I am Response")
-				if(res.ok){
-					return res.json()
+			.then((res) => {
+				if (res.ok) {
+					// console.log(res.json(), "I am Response")
+					return res.json();
 				} else {
 					Promise.reject();
 				}
 			})
 			.then(this.setDiscussions)
-			.catch(error => {
-				console.log(error, 'I AM SET DISCUSSIONS ERROR')
-			})
+			.catch((error) => {
+				console.log(error, "I AM SET DISCUSSIONS ERROR");
+			});
 	}
 
 	render() {
 		return (
 			<div>
-				<DiscussionData discussionData={this.state.discussions} />
+				<DiscussionData
+					discussionData={this.state.discussions}
+					countLikes={this.state.likes}
+				/>
 				{/* <div>
 					
 					<div>
