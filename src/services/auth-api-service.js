@@ -5,22 +5,32 @@ const AuthApiService = {
       return fetch(`${config.API_ENDPOINT}/auth/login`, {
          method: "POST",
          headers: {
-            "content-type": "application/json"
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
          },
-         body: JSON.stringify({ username, password }),
-      }).then(res => {
-         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+         // body: JSON.stringify({ username, password }),
+      })
+      .then(res => {
+         res.json()
+      })
+      .catch(error => {
+         console.log(error, "I AM POST LOGIN ERROR")
       })
    },
    postUser(user) {
-      return fetch(`${config.API_ENDPOINT}/users`, {
+      return fetch(`${config.API_ENDPOINT}/api/users`, {
          method: "POST",
          headers: {
-            "content-type": "application/json"
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
          },
          body: JSON.stringify(user),
-      }).then(res => {
-         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      })
+      .then(res => {
+         res.json()
+      })
+      .catch(error => {
+         console.log(error, "I AM POST USER ERROR")
       })
    }
 }

@@ -5,7 +5,7 @@ import SignIn from "./sign-in/sing-in";
 import Footer from "./footer/footer";
 import Nav from "./nav/nav";
 import Discussions from "./user-posts/user-posts";
-import WelcomeMessage from "./components/welcome-message/welcome-message";
+import WelcomeMessage from "./components/welcome-message";
 
 class App extends React.Component {
 	render() {

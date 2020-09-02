@@ -1,6 +1,8 @@
 :root {
   --main-purple-color: #BB86FC;
   --main-grey-color: #292929;
+  --secondary-green-color: #00DAC5;
+  --letter-spacing-pixels: 1px;
 }
 
 body {

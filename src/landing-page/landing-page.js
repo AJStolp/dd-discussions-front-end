@@ -1,6 +1,8 @@
 import React from "react";
 import "./landing-page.css";
 import AuthApiService from "../services/auth-api-service";
+// import { useHistory } from "react-router-dom";
+import { FaSignInAlt } from  "react-icons/fa";
 
 class LandingPage extends React.Component {
 	constructor(props) {
@@ -10,11 +12,13 @@ class LandingPage extends React.Component {
 		}
 	}
 	handleFormSubmit = (event) => {
+		// const history = useHistory();
+
 		event.preventDefault();
 
 		const{ username, password, email } = event.target;
 
-		AuthApiService.postLogin({
+		AuthApiService.postUser({
 			username: username.value,
 			password: password.value,
 			email: email.value
@@ -24,30 +28,41 @@ class LandingPage extends React.Component {
 			password.value = "";
 			email.value = "";
 		})
-		.then()
+		// .then(() => {
+		// 	history.push("/src/user-posts");
+		// })
+		.catch(error => {
+			let handleError = error;
+			console.log(error, "I AM ERROR")
+			return handleError
+		})
 	}
 
 	render() {
 		return (
 			<div>
+				<form className='form-landing-page' onSubmit={this.handleFormSubmit}>
 				<section className='double-dose-discussions-heading'>
 					<h1>Double Dose Discussions</h1>
 				</section>
-				<form className='form-landing-page'>
-					<label htmlFor='email' className='landing-page-form-child'>Email</label>
-					<input type='email' id='email' className="landing-page-input-child"/>
+				<section className="sign-up-here">
+					<h3>Sign Up Here</h3>
+				</section>
+					<label htmlFor='email' className='landing-page-form-child'><strong>Email</strong></label>
+					<input placeholder="Email" name="email" type='email' id='email' className="landing-page-input-child"/>
 					<label htmlFor='username' className='landing-page-form-child'>
-						Username
+						<strong>Username</strong>
 					</label>
-					<input type='text' id='username' maxLength='15' className="landing-page-input-child"/>
+					<input placeholder="Username" name="username" type='text' id='username' maxLength='15' className="landing-page-input-child"/>
 					<label htmlFor='password' className='landing-page-form-child'>
-						Password
+						<strong>Password</strong>
 					</label>
-					<input type='password' id='password' className="landing-page-input-child"/>
+					<input placeholder="Password" name="password" type='password' id='password' className="landing-page-input-child"/>
 					<button type='submit' className='landing-page-submit-button'>
-						Sign up!
+						Sign up! <FaSignInAlt className="fa-sign-icon-landing-button"/>
 					</button>
 				</form>
+				<h3>{this.handleError}</h3>
 			</div>
 		);
 	}

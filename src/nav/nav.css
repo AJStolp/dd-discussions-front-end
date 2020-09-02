@@ -8,6 +8,7 @@
    top: 0;
 }
 .div-nav-child {
+   letter-spacing: 1px;
    padding: 0 10px 0 10px;
    text-decoration: none;
    color: var(--main-purple-color);

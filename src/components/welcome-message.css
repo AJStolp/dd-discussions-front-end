@@ -8,10 +8,6 @@
    color: white;
    font-size: 1.3em;
 }
-.welcome-message-box > p {
-   position: relative;
-   top: 100px;
-}
 .section-fa-hand-piece {
    vertical-align: middle;
    text-align: center;

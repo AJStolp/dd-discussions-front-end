@@ -1,13 +1,56 @@
 import React from "react";
 import "./user-posts.css";
-import { FaFire } from 'react-icons/fa';
+// import { FaFire } from 'react-icons/fa';
+import config from "../config";
+import DiscussionData from "./user-posts-data/user-posts-data";
+// import DiscussionFetch from "../services/discussion-fetch";
 
 class Discussions extends React.Component {
+	constructor(props) {
+		super(props);
+		this.setState = {
+			discussions: [],
+		};
+	}
+	setDiscussions = (discussions) => {
+		this.setState({
+			discussions
+		})
+	}
+	componentDidMount() {
+		const APIEndpoint = config.API_ENDPOINT;
+		const postEndpoint = '/posts';
+		const url = APIEndpoint + postEndpoint;
+
+		const request = {
+			method: "GET",
+			headers: {
+				'content type': 'application-json'
+			}
+		};
+		fetch(url, request)
+			.then(res => {
+				console.log(res, "I am Response")
+				if(res.ok){
+					return res.json()
+				} else {
+					Promise.reject();
+				}
+			})
+			.then(this.setDiscussions)
+			.catch(error => {
+				console.log(error, 'I AM SET DISCUSSIONS ERROR')
+			})
+	}
+
 	render() {
 		return (
 			<div>
-				<div>
+				<DiscussionData discussionData={this.state.discussions} />
+				{/* <div>
+					
 					<div>
+
 						<section className='user-posts'>
 							<h3 className='user-posts-heading'>
 								Did the Xbox Showcase live up to its hype?
@@ -60,7 +103,6 @@ class Discussions extends React.Component {
 						</section>
 					</div>
                <hr></hr>
-               {/* ----------------------------------------- */}
                <div>
 						<section className='user-posts'>
 							<h3 className='user-posts-heading'>
@@ -96,7 +138,7 @@ class Discussions extends React.Component {
 							</p>
 						</section>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		);
 	}

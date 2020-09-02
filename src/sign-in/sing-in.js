@@ -1,8 +1,8 @@
 import React from "react";
-// import { useHistory } from "react-router-dom";
 import "./sing-in.css";
 import AuthApiService from "../services/auth-api-service";
 import TokenService from "../services/token-service";
+import { FaSignInAlt } from "react-icons/fa";
 
 class SignIn extends React.Component {
 	constructor(props) {
@@ -41,18 +41,21 @@ class SignIn extends React.Component {
 	render() {
 		return (
 			<div className='display-center'>
-				<section className='sign-in-heading'>
+				<form className='form-landing-page' onSubmit={this.handleJwtAuth}>
+				<section className="sign-up-here">
 					<h2>Login</h2>
 				</section>
-				<form className='sign-in-form' onSubmit={this.handleJwtAuth}>
-					<label htmlFor='username' className='sign-in-form-labels'>
-						Username
+					<label htmlFor='username' className='landing-page-form-child'>
+						<strong>Username</strong>
 					</label>
-					<input name="username" type='text' maxLength='15' id='username'></input>
-					<label htmlFor='password' className='sign-in-form-labels'>
-						Password
+					<input placeholder="Username" className="landing-page-input-child" name="username" type='text' maxLength='15' id='username'></input>
+					<label htmlFor='password' className='landing-page-form-child'>
+						<strong>Password</strong>
 					</label>
-					<input name="password" type='text' maxLength='15' id='password'></input>
+					<input placeholder="Password" className="landing-page-input-child" name="password" type='password' maxLength='15' id='password'></input>
+					<button type='submit' className='landing-page-submit-button'>
+						Sign In! <FaSignInAlt className="fa-sign-icon-landing-button"/>
+					</button>
 				</form>
             <div className='alert'>
 					<p>

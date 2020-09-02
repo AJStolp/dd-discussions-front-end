@@ -1,6 +1,6 @@
 import React from "react";
 import "./welcome-message.css";
-import { FaHandPeace, FaSmileBeam } from "react-icons/fa";
+import { FaSmileBeam } from "react-icons/fa";
 
 const WelcomeMessage = () => {
 	return (
@@ -10,7 +10,7 @@ const WelcomeMessage = () => {
 				<section className='welcome-message-box'>
 					<h3>Welcome</h3>
 					<p>
-						Thankyou for signing up - Please Be Respectful and Mindful of
+						Thank you for signing up - Please Be Respectful and Mindful of
 						other's!
 					</p>
 				</section>
